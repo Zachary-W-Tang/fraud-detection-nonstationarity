@@ -57,42 +57,47 @@ Model performance was assessed using AUC, confusion matrices, and stability of p
 
 ## Key Findings
 
-1. **Significant Temporal Drift**
-![Fraud Rate Over Time](figures/fraud_rate_shift.png)
+## 1. Significant Temporal Drift
 
+Fraud prevalence and key feature distributions shifted between periods.
 
-   Fraud prevalence and key feature distributions shifted between periods.
-
-
-2. **Feature Distribution Shift**
-![Claim to Premium Drift](figures/feature_distribution_shift.png)
-
-
-   Key predictors such as claim-to-premium ratio exhibit distributional differences between training and test sets. This covariate drift reduces the stability of learned relationships.
-
-
-4. **Performance Deterioration**
-   All models exhibited meaningful drops in AUC and calibration quality on forward test data.
-
-5. **Model Choice Secondary**
-   Linear and non-linear models degraded similarly, indicating structural data drift rather than model underfitting.
-
-6. **Rolling Window Superiority**
-![Rolling Window AUC](figures/rolling_window_auc.png)
-
-
-   A 4-week rolling training window produced the most stable predictive performance.
-
-
-6. **Threshold Instability**
-![Calibration Shift](figures/calibration_shift.png)
-
-
-   Fixed decision thresholds were not robust to base-rate changes.
-
+<p align="center">
+  <img src="figures/fraud_rate_shift.png" width="700">
+</p>
 
 ---
 
+## 2. Feature Distribution Shift (PSI)
+
+Key predictors such as claim-to-premium ratio exhibit distributional differences between training and test sets. This covariate drift reduces the stability of learned relationships.
+
+---
+
+## 3. Performance Deterioration
+
+All models exhibited meaningful drops in AUC and calibration quality on forward test data.
+
+---
+
+## 4. Rolling Window Superiority
+
+A 4-week rolling training window produced the most stable predictive performance.
+
+<p align="center">
+  <img src="figures/expanding_window_auc.png" width="700">
+</p>
+
+---
+
+### 5. Threshold Instability
+
+Fixed decision thresholds were not robust to base-rate changes.
+
+<p align="center">
+  <img src="figures/calibration_shift.png" width="700">
+</p>
+
+---
 ## Practical Implications
 
 - Fraud detection systems require frequent retraining.
