@@ -60,12 +60,16 @@ Model performance was assessed using AUC, confusion matrices, and stability of p
 1. **Significant Temporal Drift**
 ![Fraud Rate Over Time](figures/fraud_rate_shift.png)
 
+
    Fraud prevalence and key feature distributions shifted between periods.
 
-3. **Feature Distribution Shift**
+
+2. **Feature Distribution Shift**
 ![Claim to Premium Drift](figures/feature_distribution_shift.png)
 
+
    Key predictors such as claim-to-premium ratio exhibit distributional differences between training and test sets. This covariate drift reduces the stability of learned relationships.
+
 
 4. **Performance Deterioration**
    All models exhibited meaningful drops in AUC and calibration quality on forward test data.
@@ -76,14 +80,16 @@ Model performance was assessed using AUC, confusion matrices, and stability of p
 6. **Rolling Window Superiority**
 ![Expanding Training Window AUC](figures/expanding_window_auc.png)
 
-![Rolling Training Window AUC](figures/rolling_window_auc.png)
 
    A 4-week rolling training window produced the most stable predictive performance.
 
-8. **Threshold Instability**
+
+6. **Threshold Instability**
 ![Calibration Shift](figures/calibration_shift.png)
 
+
    Fixed decision thresholds were not robust to base-rate changes.
+
 
 ---
 
