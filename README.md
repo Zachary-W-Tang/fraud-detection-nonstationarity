@@ -78,7 +78,7 @@ Model performance was assessed using AUC, confusion matrices, and stability of p
    Linear and non-linear models degraded similarly, indicating structural data drift rather than model underfitting.
 
 6. **Rolling Window Superiority**
-![Expanding Training Window AUC](figures/expanding_window_auc.png)
+![Rolling Window AUC](figures/rolling_window_auc.png)
 
 
    A 4-week rolling training window produced the most stable predictive performance.
